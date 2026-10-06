@@ -28,7 +28,7 @@ objectness threshold = 0.25
 iou threshold = 0.5
 ```
 
-`src/yolo_postprocess.cc` 保留原 `yolo.h` 的核心数据结构和 `perform_inference` 接口，提供可读的 sigmoid、anchor 解码和 NMS 实现。它使用 TFLite 输出的 NHWC 展开顺序。
+官方工程没有随源码发布 `yolo.cc`，而是把它编译进 `common/tinyml_lib.a` 的 `yolo.o`。因此 `src/yolo_postprocess.cc` 是按官方 `yolo.h` 接口、模型输出格式、anchors 和阈值整理出的可维护实现，提供 sigmoid、anchor 解码和 IoU NMS。它使用 TFLite 输出的 NHWC 展开顺序，尚未在 Ti60F225 上与官方二进制逐框比对。
 
 ## Efinix 集成
 
