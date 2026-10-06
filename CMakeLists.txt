@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(yolo_person_postprocess CXX)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_library(yolo_postprocess STATIC src/yolo_postprocess.cc)
+target_include_directories(yolo_postprocess PUBLIC include)

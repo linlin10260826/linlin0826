@@ -1,0 +1,7 @@
+# Generated files
+build/
+*.obj
+*.o
+*.elf
+*.bin
+*.hex
